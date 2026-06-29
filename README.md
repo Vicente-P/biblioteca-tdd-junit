@@ -193,15 +193,29 @@ En conclusión, TDD me costó más al arrancar, pero me dio un diseño más acot
 
 ## Pregunta 3
 
-Si tuvieras que desarrollar nuevamente este sistema desde cero, ¿continuarías utilizando TDD? ¿Por qué?
+*"Si tuvieras que desarrollar nuevamente este sistema desde cero, ¿continuarías utilizando TDD? ¿Por qué?*"
 
-Explica qué aprendizajes obtuviste respecto a:
+*"Explica qué aprendizajes obtuviste respecto a:*"
 
 * Calidad del software.
 * Diseño de clases y métodos.
 * Detección temprana de errores.
 * Velocidad de desarrollo.
 * Confianza al realizar cambios en el código.
+
+Si tuviera que desarrollar este sistema nuevamente desde cero, **sí, usaría TDD**. Aunque al principio resulta contraintuitivo pensar en la prueba antes que en la lógica funcional, la metodología me aseguró escribir estrictamente el código necesario para cumplir los requisitos.
+
+Mis aprendizajes principales son:
+
+**Calidad del software.** Las pruebas operan como una especificación ejecutable. Los 16 tests implementados definen y garantizan el comportamiento exacto que se espera del sistema.
+
+**Diseño de clases y métodos.** TDD fuerza a diseñar con base en necesidades reales. Decisiones como utilizar un `HashMap` para lograr búsquedas con complejidad O(1) o aislar errores en excepciones de dominio propias (como `DatosInvalidosException`) surgieron directamente para hacer pasar pruebas específicas.
+
+**Detección temprana de errores.** Iniciar con las pruebas obliga a mapear los casos límite, como intentar registrar ISBNs vacíos o prestar libros que ya están prestados, antes de programar la solución principal.
+
+**Velocidad de desarrollo.** Escribir el doble de código al inicio (prueba y solución) reduce la velocidad inicial. Sin embargo, la velocidad neta aumenta al eliminar tiempos muertos en depuración (debugging) y evitar el desarrollo de lógica innecesaria.
+
+**Confianza al realizar cambios.** Es el mayor beneficio. La refactorización se vuelve segura. Extraer lógica repetida a un método `@BeforeEach` se hizo con la certeza de que el comportamiento general del sistema no se había roto.
 
 ## Evidencia
 
